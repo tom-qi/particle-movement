@@ -41,6 +41,13 @@ int main()
   Uint32 *buffer = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT]; //allocate memory to store pixels
   // might be  m_buffer = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT]
 
+  memset(buffer, 0, SCREEN_HEIGHT*SCREEN_WIDTH*sizeof(Uint32)); //set colour of screen
+
+  for(int i = 0; i < SCREEN_HEIGHT*SCREEN_WIDTH; i++){
+    buffer[i] = 0xFFFFFFFF;
+  }
+
+
   SDL_UpdateTexture(texture, NULL, buffer, SCREEN_WIDTH*sizeof(Uint32)); //update the texture with the info in the buffer and tell the renderer to render and draw the texture
   SDL_RenderClear(renderer);
   SDL_RenderCopy(renderer, texture, NULL, NULL);
