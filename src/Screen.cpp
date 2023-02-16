@@ -50,6 +50,8 @@ bool Screen::init()
 }
 
 void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue){
+    
+    //TODO optional line to prevent clipping so pixels are not plotted on the border (1 pixel off the edge)
 
     Uint32 color = 0;
 
