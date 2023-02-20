@@ -9,7 +9,7 @@ class Swarm
 {
 public:
 
-    const static int NPARTICLES = 5000;
+    const static int NPARTICLES = 1000;
 
 private:
     Particle *m_pParticles;
@@ -17,6 +17,9 @@ private:
 public:
     Swarm();
     ~Swarm();
+
+    void update();
+
     const Particle *getParticles(){
 
         return m_pParticles; 
